@@ -9,7 +9,8 @@ import os
 batchSize=2
 imageSize=[600,600]
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')   # train on the GPU or on the CPU, if a GPU is not available
-trainDir="/home/breakeroftime/Documents/Datasets/LabPics/LabPicsChemistry/Train"
+# trainDir="/home/breakeroftime/Documents/Datasets/LabPics/LabPicsChemistry/Train"
+trainDir = "/Users/ducky/Documents/3rd_year_experiment/train"
 
 imgs=[]
 for pth in os.listdir(trainDir):
