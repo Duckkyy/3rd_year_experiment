@@ -64,5 +64,11 @@ for label in range(1, 8):
 # Copy image to test dataset dir
 for idx, row in test_df.iterrows():
     test_image_path = os.path.join(image_path, row["image"])
+    test_image_folder = row['image'].split('/')[0]
 
-    shutil.copy(test_image_path, test_dataset)
+    test_dataset_dir_path = os.path.join(test_dataset, test_image_folder)
+    if not os.path.isdir(test_dataset_dir_path):
+        os.makedirs(test_dataset_dir_path)
+
+    shutil.copy(train_image_path, test_dataset_dir_path)
+    # shutil.copy(test_image_path, test_dataset)
