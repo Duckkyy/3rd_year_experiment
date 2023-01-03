@@ -38,7 +38,7 @@ for label in range(1, 8):
 
     # Copy image to train dataset dir
     for idx, row in train_df.iterrows():
-        print(row['image'])
+        # print(row['image'])
         train_image_path = os.path.join(image_path, row["image"])
         train_image_folder = row['image'].split('/')[0]
         train_label = str(row["label"])
@@ -70,5 +70,5 @@ for idx, row in test_df.iterrows():
     if not os.path.isdir(test_dataset_dir_path):
         os.makedirs(test_dataset_dir_path)
 
-    shutil.copy(train_image_path, test_dataset_dir_path)
+    shutil.copy(test_image_path, test_dataset_dir_path)
     # shutil.copy(test_image_path, test_dataset)
