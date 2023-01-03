@@ -16,9 +16,10 @@ for data in train_data:
         data = data[:-1]
     
     image_path = data.split()[0]
+    image_folder = image_path.split('/')[0]
     class_num = data.split()[1]
 
-    des_path = os.path.join(train_fol, class_num)
+    des_path = os.path.join(train_fol, class_num, image_folder)
     os.makedirs(des_path, exist_ok=True)
 
     image_full_path = os.path.join(datasets_fol, image_path)
